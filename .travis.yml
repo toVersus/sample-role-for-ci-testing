@@ -1,0 +1,16 @@
+language: python
+
+sudo: required
+dist: precise
+
+python: "2.7"
+
+before_install:
+  - pip install pipenv
+
+install:
+  - pipenv sync --dev
+
+script:
+  - pipenv run check
+  - pipenv run test
