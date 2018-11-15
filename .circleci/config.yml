@@ -3,11 +3,12 @@ version: 2
 jobs:
   build:
     machine: yes
-    working_directory: ~/sample-role-for-cicleci-testing
+    working_directory: ~/sample-role-for-ci-testing
     environment:
       PIPENV_VENV_IN_PROJECT: true
     steps:
       - checkout
+      - run: sudo chown -R circleci:circleci /usr/local/bin
 
       - restore_cache:
           key: sample-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
@@ -25,6 +26,6 @@ jobs:
 
       - run:
           command: pipenv run check
-      
+
       - run:
           command: pipenv run test
