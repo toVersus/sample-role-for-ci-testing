@@ -1,6 +1,8 @@
 Role Name
 =========
 
+[![CircleCI](https://circleci.com/gh/toVersus/sample-role-for-ci-testing.svg?style=svg)](https://circleci.com/gh/toVersus/sample-role-for-ci-testing)
+
 A brief description of the role goes here.
 
 Requirements
