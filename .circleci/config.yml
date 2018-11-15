@@ -1,0 +1,30 @@
+---
+version: 2
+jobs:
+  build:
+    machine: yes
+    working_directory: ~/sample-role-for-cicleci-testing
+    environment:
+      PIPENV_VENV_IN_PROJECT: true
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: sample-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+
+      - run:
+          command: |
+            pip install pipenv
+            pipenv sync --dev
+
+      - save_cache:
+          key: sample-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}
+          paths:
+            - ".venv"
+            - "/usr/local/bin"
+
+      - run:
+          command: pipenv run check
+      
+      - run:
+          command: pipenv run test
