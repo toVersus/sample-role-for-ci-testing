@@ -2,12 +2,17 @@
 language: python
 
 sudo: required
-dist: precise
+dist: xenial
+
+service:
+  - docker
 
 python: "2.7"
 
 before_install:
+  - sudo apt-get update
   - pip install pipenv
+  - pipenv run pip install pip==18.0
 
 install:
   - pipenv sync --dev
