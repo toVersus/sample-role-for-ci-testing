@@ -1,0 +1,21 @@
+---
+version: 1.0.{build}
+
+image: ubuntu
+
+stack: python 2.7
+
+services:
+  - docker
+
+clone_folder: /home/appveyor/projects/sample-role-for-ci-testing
+
+install:
+  - pip install pipenv
+  - pipenv sync --dev
+
+test_script:
+  - pipenv run check
+  - pipenv run test
+
+build: off
