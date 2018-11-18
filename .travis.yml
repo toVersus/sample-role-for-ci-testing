@@ -9,6 +9,9 @@ service:
 
 python: "2.7"
 
+env:
+  - PIPENV_VERBOSITY=-1
+
 before_install:
   - sudo apt-get update
   - pip install pipenv
