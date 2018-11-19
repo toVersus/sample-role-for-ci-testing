@@ -3,7 +3,8 @@ Role Name
 
 [![CircleCI](https://circleci.com/gh/toVersus/sample-role-for-ci-testing.svg?style=svg)](https://circleci.com/gh/toVersus/sample-role-for-ci-testing)
 [![TravisCI](https://travis-ci.org/toVersus/sample-role-for-ci-testing.svg?branch=master)](https://travis-ci.org/toVersus/sample-role-for-ci-testing)
-[![AppVeyor](https://ci.appveyor.com/project/toVersus/sample-role-for-ci-testing/branch/master)](https://ci.appveyor.com/project/toVersus/sample-role-for-ci-testing)
+[![AppVeyor](https://ci.appveyor.com/api/projects/status/bagbu5l6qvvqtnso?svg=true)](https://ci.appveyor.com/project/toVersus/sample-role-for-ci-testing)
+[![Azure Pipelines](https://dev.azure.com/toversus/sample-role-for-ci-testing/_apis/build/status/toVersus.sample-role-for-ci-testing)](https://dev.azure.com/toversus/sample-role-for-ci-testing/_build/latest?definitionId=1)
 
 A brief description of the role goes here.
 

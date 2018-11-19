@@ -12,10 +12,7 @@ steps:
       cd ../
       mv $(Build.SourcesDirectory) sample-role-for-ci-testing
       cd sample-role-for-ci-testing
-      python -m pip install --upgrade pip setuptools wheel
       pip install pipenv
       pipenv sync --dev
-
-  - script: |
       pipenv run check
       pipenv run test
