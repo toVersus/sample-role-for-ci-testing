@@ -18,7 +18,6 @@ install:
   - pipenv sync --dev
 
 test_script:
-  - pipenv run check
   - pipenv run test
 
 build: off

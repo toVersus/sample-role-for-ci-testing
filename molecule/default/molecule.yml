@@ -12,6 +12,9 @@ platforms:
     command: /sbin/init
 provisioner:
   name: ansible
+  config_options:
+    diff:
+      always: true
   lint:
     name: ansible-lint
     options:

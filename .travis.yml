@@ -21,5 +21,4 @@ install:
   - pipenv sync --dev
 
 script:
-  - pipenv run check
   - pipenv run test

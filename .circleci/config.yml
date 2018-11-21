@@ -25,7 +25,4 @@ jobs:
             - "/usr/local/bin"
 
       - run:
-          command: pipenv run check
-
-      - run:
           command: pipenv run test
