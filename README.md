@@ -1,5 +1,5 @@
-Role Name
-=========
+sample-role-for-ci-testing
+==========================
 
 [![CircleCI](https://circleci.com/gh/toVersus/sample-role-for-ci-testing.svg?style=svg)](https://circleci.com/gh/toVersus/sample-role-for-ci-testing)
 [![TravisCI](https://travis-ci.org/toVersus/sample-role-for-ci-testing.svg?branch=master)](https://travis-ci.org/toVersus/sample-role-for-ci-testing)
