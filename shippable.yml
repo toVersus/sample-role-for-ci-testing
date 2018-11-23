@@ -1,0 +1,17 @@
+---
+language: python
+
+python:
+  - 2.7
+
+env:
+  - PIPENV_VERBOSITY: -1
+
+build:
+  cache: true
+  cache_dir_list:
+    - /root/venv
+  ci:
+    - pip install pipenv
+    - pipenv sync --dev
+    - pipenv run test
