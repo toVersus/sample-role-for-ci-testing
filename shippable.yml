@@ -5,12 +5,13 @@ python:
   - 2.7
 
 env:
-  - PIPENV_VERBOSITY: -1
+  - PIPENV_VERBOSITY=-1
 
 build:
   cache: true
   cache_dir_list:
-    - /root/venv
+    - /root/venv/2.7
+    - $SHIPPABLE_BUILD_DIR
   ci:
     - pip install pipenv
     - pipenv sync --dev
