@@ -3,3 +3,8 @@
   yum:
     name: httpd
     state: latest
+
+- name: generate config file -> httpd.conf
+  template:
+    src: etc/httpd/conf/httpd.conf.j2
+    dest: /etc/httpd/conf/httpd.conf

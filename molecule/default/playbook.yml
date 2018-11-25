@@ -1,5 +1,7 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    listen_port: 8080
   roles:
     - role: sample-role-for-ci-testing
