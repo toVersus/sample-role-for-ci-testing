@@ -13,6 +13,9 @@ clone_folder: /home/appveyor/projects/sample-role-for-ci-testing
 environment:
   PIPENV_VERBOSITY: -1
 
+cache:
+  - /home/appveyor/venv2.7.*
+
 install:
   - pip install pipenv
   - pipenv sync --dev
