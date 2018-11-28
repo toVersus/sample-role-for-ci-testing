@@ -1,0 +1,46 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+lint:
+  name: yamllint
+platforms:
+  - name: instance-vm
+    instance_raw_config_args:
+      - "vm.network 'forwarded_port', guest: 80, host: 8080"
+    interfaces:
+      - auto_config: true
+        network_name: private_network
+        type: dhcp
+    box: centos/7
+    memory: 1024
+    cpus: 1
+    provision: True
+provisioner:
+  name: ansible
+  config_options:
+    diff:
+      always: true
+  lint:
+    name: ansible-lint
+    options:
+      L: true
+      force-color: true
+scenario:
+  name: local
+  check_sequence:
+    - lint
+    - destroy
+    - dependency
+    - syntax
+    - create
+    - prepare
+    - check
+    - destroy
+verifier:
+  name: testinfra
+  lint:
+    name: flake8

@@ -1,0 +1,4 @@
+---
+- src: https://github.com/geerlingguy/ansible-role-java
+  name: geerlingguy.java
+  version: 1.9.4
