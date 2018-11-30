@@ -16,7 +16,7 @@ jobs:
       - run:
           command: |
             pip install pipenv
-            pipenv sync --dev
+            pipenv sync
 
       - save_cache:
           key: sample-v1-{{ .Branch }}-{{ checksum "Pipfile.lock" }}

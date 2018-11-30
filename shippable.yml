@@ -14,5 +14,5 @@ build:
     - $SHIPPABLE_BUILD_DIR
   ci:
     - pip install pipenv
-    - pipenv sync --dev
+    - pipenv sync
     - pipenv run test

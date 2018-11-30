@@ -22,7 +22,7 @@ before_install:
   - pipenv run pip install pip==18.0
 
 install:
-  - pipenv sync --dev
+  - pipenv sync
 
 script:
   - pipenv run test
