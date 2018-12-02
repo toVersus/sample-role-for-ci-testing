@@ -14,7 +14,7 @@ environment:
   PIPENV_VERBOSITY: -1
 
 cache:
-  - /home/appveyor/venv2.7.*
+  - /home/appveyor/venv2.7.* -> Pipfile.lock
 
 install:
   - pip install pipenv
