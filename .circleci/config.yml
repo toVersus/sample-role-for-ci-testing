@@ -1,29 +1,37 @@
 ---
 version: 2
 
-CACHE_KEY: 'sample-v1-{{ checksum "Pipfile.lock" }}'
+anchors:
+  DEFAULTS: &DEFAULTS
+    machine: true
+    environment:
+      PIPENV_VENV_IN_PROJECT: true
+    working_directory: ~/sample-playbook-for-ci-testing
+
+  RESTORE_CACHE: &RESTORE_CACHE
+    restore_cache:
+      key: 'sample-role-v1-{{ checksum "Pipfile.lock" }}'
+
+  INSTALL_ANSIBLE_RELATED_PACKAGES: &INSTALL_ANSIBLE_RELATED_PACKAGES
+    run:
+      command: |
+        pip --version
+        pip install pipenv
+        pipenv sync
 
 jobs:
   build:
-    machine: yes
-    working_directory: ~/sample-role-for-ci-testing
-    environment:
-      PIPENV_VENV_IN_PROJECT: true
+    <<: *DEFAULTS
     steps:
       - checkout
+      - *RESTORE_CACHE
 
-      - restore_cache:
-          key: CACHE_KEY
-
-      - run:
-          command: |
-            pip install pipenv
-            pipenv sync
+      - *INSTALL_ANSIBLE_RELATED_PACKAGES
 
       - save_cache:
-          key: CACHE_KEY
+          key: 'sample-role-v1-{{ checksum "Pipfile.lock" }}'
           paths:
-            - ".venv"
+            - .venv
 
       - run:
           command: pipenv run test
