@@ -6,7 +6,7 @@ anchors:
     machine: true
     environment:
       PIPENV_VENV_IN_PROJECT: true
-    working_directory: ~/sample-playbook-for-ci-testing
+    working_directory: ~/sample-role-for-ci-testing
 
   RESTORE_CACHE: &RESTORE_CACHE
     restore_cache:
