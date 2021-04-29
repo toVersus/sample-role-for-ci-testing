@@ -1,0 +1,21 @@
+version: 2
+updates:
+- package-ecosystem: pip
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  reviewers:
+  - toVersus
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: ansible
+    versions:
+    - 2.10.0
+    - 2.7.12
+  - dependency-name: docker
+    versions:
+    - 4.4.1
+    - 4.4.2
+    - 4.4.3
